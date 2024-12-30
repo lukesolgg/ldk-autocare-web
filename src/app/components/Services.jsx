@@ -14,28 +14,30 @@ function Services() {
   ];
 
   return (
-    <div className="relative h-screen flex items-center">
+    <div className="relative min-h-screen py-8 md:py-20">
       <Image
         src={ServicesBackground}
         alt="Services Background"
         fill
         className="object-cover"
+        priority
       />
       
       <div className="absolute inset-0 bg-black/50" />
 
       <div className="relative z-10 container mx-auto px-4">
-        <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-8">
+        <h2 className="text-3xl md:text-5xl font-bold text-white text-center mb-6 md:mb-12">
           Our Services
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 max-w-6xl mx-auto">
           {packages.map((pkg, index) => (
             <div 
               key={index}
-              className={`bg-gradient-to-br from-blue-600 to-blue-900 
-                rounded-lg overflow-hidden shadow-xl hover:scale-105 transition-transform duration-300 h-[350px]
-                ${index > 2 ? 'md:col-span-1.5 md:translate-x-1/2' : ''}`}
+              className="bg-gradient-to-br from-blue-600 to-blue-900 
+                rounded-lg overflow-hidden shadow-xl 
+                hover:scale-105 active:scale-95 transition-transform duration-300
+                h-[300px] md:h-[350px]"
             >
               <div className="relative h-[70%] w-full">
                 <Image
@@ -46,14 +48,16 @@ function Services() {
                 />
               </div>
               
-              <div className="p-4 h-[30%] flex items-end justify-between">
+              <div className="p-3 md:p-4 h-[30%] flex items-end justify-between">
                 <div className="text-white">
-                  <h3 className="text-lg font-bold">{pkg.name}</h3>
-                  <p className="text-sm">{pkg.time}</p>
-                  <p className="text-base font-bold">From £{pkg.price}</p>
+                  <h3 className="text-base md:text-lg font-bold">{pkg.name}</h3>
+                  <p className="text-xs md:text-sm">{pkg.time}</p>
+                  <p className="text-sm md:text-base font-bold">From £{pkg.price}</p>
                 </div>
                 <Link href="/services">
-                  <button className="bg-white text-blue-600 px-4 py-1.5 rounded-md hover:bg-gray-100 transition duration-300 text-sm">
+                  <button className="bg-white text-blue-600 px-3 md:px-4 py-1 md:py-1.5 
+                    rounded-md hover:bg-gray-100 transition duration-300 
+                    text-xs md:text-sm whitespace-nowrap">
                     See More
                   </button>
                 </Link>

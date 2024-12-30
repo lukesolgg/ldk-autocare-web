@@ -42,18 +42,31 @@ function Hero() {
         </p>
 
         {/* Buttons */}
-        <div className="flex gap-4">
-          <Link href="/services">
-            <button className="bg-blue-500 text-white px-8 py-3 rounded-md hover:bg-blue-600 transition duration-300">
-              Services
-            </button>
-          </Link>
-          <Link href="/contact">
-            <button className="bg-white text-black px-8 py-3 rounded-md hover:bg-gray-200 transition duration-300">
-              Contact Us
-            </button>
-          </Link>
-        </div>
+        <div className="flex gap-4 md:gap-6">
+  <Link href="/services">
+    <button className="relative w-[150px] md:w-[200px] px-6 py-3 md:px-8 md:py-4 
+      bg-gradient-to-r from-blue-400 to-blue-600 
+      hover:scale-110 transition-all duration-300 
+      text-white text-sm md:text-base font-medium
+      border-2 border-transparent
+      hover:border-blue-300
+      text-center">
+      Services
+    </button>
+  </Link>
+  <Link href="/contact">
+    <button className="relative w-[150px] md:w-[200px] px-6 py-3 md:px-8 md:py-4 
+      bg-transparent 
+      hover:scale-110 transition-all duration-300 
+      text-white text-sm md:text-base font-medium
+      border-2
+      [background-clip:padding-box]
+      [border-image:linear-gradient(to_right,#60a5fa,#3b82f6)_1]
+      text-center">
+      Contact Us
+    </button>
+  </Link>
+</div>
       </div>
     </div>
   );
