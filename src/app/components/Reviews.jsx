@@ -81,7 +81,7 @@ function Reviews() {
           Reviews
         </h2>
         <p className="text-base md:text-xl text-white text-center mb-8 md:mb-12 px-4">
-          DON'T JUST TAKE OUR WORD FOR IT, SEE WHAT OUR CLIENTS HAVE TO SAY:
+          Don't just take our word for it, See what our clients have to say:
         </p>
 
         <div className="relative max-w-7xl mx-auto px-4">

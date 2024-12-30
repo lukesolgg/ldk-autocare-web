@@ -21,8 +21,8 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="bg-black text-white w-full fixed top-8 z-40 border-b-2 border-blue-500">
-  <div className="container mx-auto px-4">
+      <nav className="bg-black text-white w-full fixed top-8 pt-2 z-40 border-b-[3px] border-[#85A5F5]">
+      <div className="container mx-auto px-4">
     <div className="flex justify-between items-center h-20">
       {/* Logo and Company Name */}
       <div className="flex items-center space-x-4">
@@ -60,10 +60,10 @@ const Navbar = () => {
       </div>
 
             {/* Desktop Book Now Button */}
-<div className="hidden md:block">
+<div className="hidden md:block my-auto">
   <Link href="/book">
-    <button className="relative px-6 py-3 
-      bg-gradient-to-r from-blue-400 to-blue-600 
+    <button className="relative px-6 py-2.5
+      bg-[linear-gradient(90deg,#85A5F5,#1877F2,#4AF9F9)]
       hover:scale-110 transition-all duration-300 
       text-white text-sm md:text-base font-medium
       border-2 border-transparent

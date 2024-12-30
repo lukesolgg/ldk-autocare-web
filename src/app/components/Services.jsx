@@ -26,19 +26,22 @@ function Services() {
       <div className="absolute inset-0 bg-black/50" />
 
       <div className="relative z-10 container mx-auto px-4">
-        <h2 className="text-3xl md:text-5xl font-bold text-white text-center mb-6 md:mb-12">
-          Our Services
-        </h2>
+  <h2 className="text-3xl md:text-5xl font-bold text-white text-center mb-4">
+    Our Services
+  </h2>
+  <p className="text-lg md:text-xl text-white/80 text-center mb-12">
+    Professional Car Detailing Services in Belfast
+  </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 max-w-6xl mx-auto">
-          {packages.map((pkg, index) => (
-            <div 
-              key={index}
-              className="bg-gradient-to-br from-blue-600 to-blue-900 
-                rounded-lg overflow-hidden shadow-xl 
-                hover:scale-105 active:scale-95 transition-transform duration-300
-                h-[300px] md:h-[350px]"
-            >
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 max-w-6xl mx-auto">
+    {packages.map((pkg, index) => (
+      <div 
+        key={index}
+        className="bg-[linear-gradient(90deg,#85A5F5,#1877F2,#4AF9F9)] 
+          rounded-lg overflow-hidden shadow-xl 
+          hover:scale-105 active:scale-95 transition-transform duration-300
+          h-[300px] md:h-[350px]"
+      >
               <div className="relative h-[70%] w-full">
                 <Image
                   src={HeroBackground}
@@ -65,7 +68,7 @@ function Services() {
             </div>
           ))}
         </div>
-      </div>
+    </div>
     </div>
   );
 }

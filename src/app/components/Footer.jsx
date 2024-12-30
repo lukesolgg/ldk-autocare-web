@@ -4,7 +4,7 @@ import { FaWhatsapp, FaInstagram, FaTiktok, FaYoutube } from 'react-icons/fa';
 
 function Footer() {
   return (
-    <footer className="bg-black text-white border-t-2 border-blue-500 min-h-[50vh] flex flex-col justify-between py-6 md:py-8">
+    <footer className="bg-black text-white border-t-[3px] border-[#85A5F5] min-h-[50vh] flex flex-col justify-between py-6 md:py-8">
       {/* Get in Touch Section */}
       <div className="container mx-auto px-4 py-4 md:py-8 text-center">
         <h2 className="text-xl md:text-2xl font-bold mb-3 md:mb-4">Get in Touch</h2>
