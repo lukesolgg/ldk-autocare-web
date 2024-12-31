@@ -33,23 +33,29 @@ function Services() {
     Professional Car Detailing Services in Belfast
   </p>
 
-  <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 max-w-6xl mx-auto">
-    {packages.map((pkg, index) => (
-      <div 
-        key={index}
-        className="bg-[linear-gradient(90deg,#85A5F5,#1877F2,#4AF9F9)] 
-          rounded-lg overflow-hidden shadow-xl 
-          hover:scale-105 active:scale-95 transition-transform duration-300
-          h-[300px] md:h-[350px]"
-      >
-              <div className="relative h-[70%] w-full">
-                <Image
-                  src={HeroBackground}
-                  alt={pkg.name}
-                  fill
-                  className="object-cover"
-                />
-              </div>
+  <div className="grid grid-cols-1 md:grid-cols-6 gap-4 md:gap-8 max-w-6xl mx-auto">
+  {packages.map((pkg, index) => (
+    <div 
+      key={index}
+      className={`bg-[linear-gradient(90deg,#85A5F5,#1877F2,#4AF9F9)] 
+        rounded-lg overflow-hidden shadow-xl 
+        hover:scale-105 active:scale-95 transition-transform duration-300
+        h-[300px] md:h-[350px]
+        ${index >= packages.length - 2 ? 'md:col-span-2' : 'md:col-span-2'}`}
+      style={{
+        gridColumnStart: index === packages.length - 2 ? '2' : 
+                        index === packages.length - 1 ? '4' : 
+                        index * 2 + 1
+      }}
+    >
+      <div className="relative h-[70%] w-full">
+        <Image
+          src={HeroBackground}
+          alt={pkg.name}
+          fill
+          className="object-cover"
+        />
+      </div>
               
               <div className="p-3 md:p-4 h-[30%] flex items-end justify-between">
                 <div className="text-white">
