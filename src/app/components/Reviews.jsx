@@ -15,7 +15,7 @@ function Reviews() {
       setIsMobile(window.innerWidth < 768);
     };
     
-    handleResize(); // Initial check
+    handleResize();
     window.addEventListener('resize', handleResize);
     
     return () => window.removeEventListener('resize', handleResize);
@@ -88,8 +88,9 @@ function Reviews() {
           <button 
             onClick={prevSlide}
             className="absolute left-0 md:left-[-40px] top-1/2 transform -translate-y-1/2 
-              text-white text-3xl md:text-4xl hover:text-blue-500 transition-colors duration-300 
-              z-20 p-4 md:p-0"
+              text-white text-3xl md:text-4xl opacity-20 hover:opacity-100 active:opacity-100
+              transition-all duration-300 z-20 p-4 md:p-0"
+            aria-label="Previous review"
           >
             <IoIosArrowBack />
           </button>
@@ -98,10 +99,11 @@ function Reviews() {
             {reviews.slice(currentSlide, currentSlide + (isMobile ? 1 : 4)).map((review, index) => (
               <div 
                 key={index}
-                className="bg-white rounded-lg p-6 shadow-xl transform transition-all duration-300
-                  hover:scale-105 active:scale-95 md:hover:scale-105"
+                className="bg-[linear-gradient(135deg,#85A5F5,#1877F2,#4AF9F9)] rounded-lg p-6 
+                  shadow-xl transform transition-all duration-300
+                  hover:scale-105 active:scale-95"
               >
-                <p className="italic text-gray-700 mb-4 text-sm md:text-base">
+                <p className="italic text-white mb-4 text-sm md:text-base">
                   "{review.text}"
                 </p>
                 <div className="flex text-yellow-400 mb-2">
@@ -109,10 +111,10 @@ function Reviews() {
                     <AiFillStar key={i} className="text-xl md:text-2xl" />
                   ))}
                 </div>
-                <p className="text-gray-600 font-semibold text-sm md:text-base">
+                <p className="text-white font-semibold text-sm md:text-base">
                   {review.name}
                 </p>
-                <p className="text-gray-500 text-xs md:text-sm">
+                <p className="text-white/80 text-xs md:text-sm">
                   {review.location}
                 </p>
               </div>
@@ -122,8 +124,9 @@ function Reviews() {
           <button 
             onClick={nextSlide}
             className="absolute right-0 md:right-[-40px] top-1/2 transform -translate-y-1/2 
-              text-white text-3xl md:text-4xl hover:text-blue-500 transition-colors duration-300 
-              z-20 p-4 md:p-0"
+              text-white text-3xl md:text-4xl opacity-20 hover:opacity-100 active:opacity-100
+              transition-all duration-300 z-20 p-4 md:p-0"
+            aria-label="Next review"
           >
             <IoIosArrowForward />
           </button>
