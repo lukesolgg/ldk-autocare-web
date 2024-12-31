@@ -42,23 +42,33 @@ function BookNow() {
         </p>
   
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-12 max-w-6xl mx-auto">
-          {steps.map((step, index) => (
-            <div 
-              key={index}
-              className="bg-[linear-gradient(135deg,#85A5F5,#1877F2,#4AF9F9)] rounded-lg 
-                aspect-square flex flex-col items-center justify-center p-4 md:p-12
-                shadow-xl hover:scale-105 active:scale-95 transition-transform duration-300
-                relative overflow-hidden h-[200px] md:h-auto"
-            >
-        <div className="absolute top-2 md:top-4 left-2 md:left-4 text-2xl md:text-5xl font-bold text-white/80">
-          {step.number}
-        </div>
-        <div className="text-white text-3xl md:text-6xl">{step.icon}</div>
-        <h3 className="text-base md:text-2xl font-bold text-white text-center mt-2 md:mt-4">
-          {step.title}
-        </h3>
-      </div>
-    ))}
+        {steps.map((step, index) => (
+  <div 
+    key={index}
+    className="bg-[linear-gradient(135deg,#85A5F5,#1877F2,#4AF9F9)] rounded-xl 
+      aspect-square flex flex-col items-center justify-center p-6 md:p-12
+      shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:shadow-[0_8px_30px_rgba(24,119,242,0.3)]
+      hover:scale-105 active:scale-95 transition-all duration-300
+      relative overflow-hidden h-[250px] md:h-auto
+      backdrop-blur-sm border border-white/10"
+  >
+    <div className="absolute top-4 md:top-6 left-4 md:left-6 
+      text-3xl md:text-6xl font-extralight text-white/40
+      tracking-wider font-serif">
+      {step.number}
+    </div>
+    
+    <div className="text-white text-4xl md:text-7xl mb-4 
+      transform transition-transform duration-300 hover:scale-110">
+      {step.icon}
+    </div>
+    
+    <h3 className="text-lg md:text-2xl font-bold text-white text-center mt-2 
+      tracking-wide leading-relaxed">
+      {step.title}
+    </h3>
+  </div>
+))}
   </div>
 </div>
     </div>

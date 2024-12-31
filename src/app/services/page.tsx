@@ -19,7 +19,7 @@ export default function ServicesPage() {
             "Window cleaning inside and out",
             "Interior vacuum and dust removal"
           ],
-          price: "100"
+          price: "40"
         },
         {
           title: "FULL VALET",
@@ -32,7 +32,7 @@ export default function ServicesPage() {
             "Paint correction",
             "Engine bay cleaning"
           ],
-          price: "150"
+          price: "70"
         },
         {
           title: "CLAY AND SEAL",
@@ -45,7 +45,7 @@ export default function ServicesPage() {
             "Swirl mark removal",
             "Paint enhancement"
           ],
-          price: "200"
+          price: "120"
         },
         {
           title: "CERAMIC COATING",
@@ -58,7 +58,7 @@ export default function ServicesPage() {
             "Curing process",
             "Final inspection"
           ],
-          price: "500"
+          price: "400"
         },
         {
           title: "NEW CAR PROTECTION",
@@ -71,7 +71,7 @@ export default function ServicesPage() {
             "Wheel protection",
             "Documentation"
           ],
-          price: "750"
+          price: "POA"
         }
       ];
   return (
@@ -137,7 +137,6 @@ export default function ServicesPage() {
           </section>
         ))}
       </main>
-      <Footer />
     </>
   );
 }

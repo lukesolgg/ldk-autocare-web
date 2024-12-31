@@ -5,13 +5,38 @@ import ServicesBackground from "../assets/ServicesBackground.png";
 import HeroBackground from "../assets/HeroBackground.png";
 
 function Services() {
-  const packages = [
-    { name: "MAINTENANCE", time: "4 hr 30 mins", price: "100" },
-    { name: "FULL VALET", time: "4 hr 30 mins", price: "100" },
-    { name: "CLAY AND SEAL", time: "4 hr 30 mins", price: "100" },
-    { name: "CERAMIC COATING", time: "4 hr 30 mins", price: "100" },
-    { name: "NEW CAR PROTECTION", time: "4 hr 30 mins", price: "100" },
-  ];
+    const packages = [
+        {
+          name: "Maintenance Detail",
+          time: "2-3 Hours",
+          price: "40",
+          slug: "maintenance"
+        },
+        {
+          name: "Full Valet",
+          time: "4-6 Hours",
+          price: "70",
+          slug: "full-valet"
+        },
+        {
+          name: "Clay & Seal",
+          time: "5-7 Hours",
+          price: "120",
+          slug: "clay-seal"
+        },
+        {
+          name: "Ceramic Coating",
+          time: "1-2 Days",
+          price: "400",
+          slug: "ceramic-coating"
+        },
+        {
+          name: "New Car Protection",
+          time: "1-2 Days",
+          price: "POA",
+          slug: "new-car-protection"
+        }
+      ];
 
   return (
     <div className="relative min-h-screen py-8 md:py-20">
@@ -63,12 +88,12 @@ function Services() {
                   <p className="text-xs md:text-sm">{pkg.time}</p>
                   <p className="text-sm md:text-base font-bold">From £{pkg.price}</p>
                 </div>
-                <Link href="/services">
-                  <button className="bg-white text-blue-600 px-3 md:px-4 py-1 md:py-1.5 
-                    rounded-md hover:bg-gray-100 transition duration-300 
-                    text-xs md:text-sm whitespace-nowrap">
-                    See More
-                  </button>
+                <Link href={`/services/${pkg.slug}`}>
+                        <button className="bg-white text-blue-600 px-3 md:px-4 py-1 md:py-1.5 
+                        rounded-md hover:bg-gray-100 transition duration-300 
+                        text-xs md:text-sm whitespace-nowrap">
+                        See More
+                    </button>
                 </Link>
               </div>
             </div>

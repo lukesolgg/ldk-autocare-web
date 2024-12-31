@@ -119,7 +119,6 @@ export default function MaintenancePage() {
           </div>
         </section>
       </main>
-      <Footer />
     </>
   );
 }
