@@ -9,7 +9,8 @@ import Footer from "../components/Footer";
 export default function ServicesPage() {
     const services = [
         {
-          title: "MAINTENANCE FULL VALET",
+          title: "MAINTENANCE DETAIL",
+          slug: "maintenance",
           description: "Our comprehensive maintenance valet service keeps your vehicle in pristine condition. Perfect for regular upkeep and maintaining that showroom finish.",
           includes: [
             "Full exterior wash and decontamination",
@@ -22,6 +23,7 @@ export default function ServicesPage() {
         },
         {
           title: "FULL VALET",
+          slug: "full-valet",
           description: "A complete transformation for your vehicle, inside and out. Our full valet service restores your car to its former glory.",
           includes: [
             "Complete exterior detail",
@@ -34,6 +36,7 @@ export default function ServicesPage() {
         },
         {
           title: "CLAY AND SEAL",
+          slug: "clay-seal",
           description: "Professional paint correction and protection service. Removes contaminants and adds a protective layer to your vehicle's paintwork.",
           includes: [
             "Clay bar treatment",
@@ -46,6 +49,7 @@ export default function ServicesPage() {
         },
         {
           title: "CERAMIC COATING",
+          slug: "ceramic-coating",
           description: "Premium long-lasting protection for your vehicle. Our ceramic coating provides exceptional durability and shine.",
           includes: [
             "Paint correction",
@@ -58,6 +62,7 @@ export default function ServicesPage() {
         },
         {
           title: "NEW CAR PROTECTION",
+          slug: "new-car-protection",
           description: "Preserve your new car's finish from day one. Complete protection package for new vehicles.",
           includes: [
             "Paint protection film",
@@ -71,8 +76,7 @@ export default function ServicesPage() {
       ];
   return (
     <>
-      <Announcement />
-      <Navbar />
+      
       <main className="pt-16">
         {services.map((service, index) => (
           <section 
@@ -120,13 +124,14 @@ export default function ServicesPage() {
                 <p className="text-2xl md:text-3xl font-bold text-white mb-8">
                   Prices from £{service.price}
                 </p>
-                <button className="w-full md:w-auto px-8 py-3 
-                  bg-[linear-gradient(90deg,#85A5F5,#1877F2,#4AF9F9)]
-                  rounded-lg text-white font-bold
-                  hover:scale-105 transition-all duration-300
-                  text-center self-start">
-                  Book Now
-                </button>
+                <Link href={`/services/${service.slug}`}>
+    <button className="w-full md:w-auto px-8 py-3 
+      bg-[linear-gradient(90deg,#85A5F5,#1877F2,#4AF9F9)]
+      rounded-lg text-white font-bold
+      hover:scale-105 transition-all duration-300">
+      Learn More
+    </button>
+  </Link>
               </div>
             </div>
           </section>

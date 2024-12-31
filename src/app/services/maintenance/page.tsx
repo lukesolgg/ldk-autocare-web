@@ -51,7 +51,7 @@ export default function MaintenancePage() {
         <section className="container mx-auto px-4 py-12 border-b-2 border-[#85A5F5]">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <h1 className="text-4xl md:text-6xl font-bold text-white">
-              Maintenance Full Valet
+              Maintenance Detail
             </h1>
             <Link href="/book">
               <button className="px-8 py-3 
@@ -67,7 +67,7 @@ export default function MaintenancePage() {
         {/* Description Section */}
         <section className="container mx-auto px-4 py-12">
           <p className="text-white/80 text-lg md:text-xl mb-12 max-w-4xl">
-            Our comprehensive maintenance valet service is designed to keep your vehicle in pristine condition. 
+            Our comprehensive maintenance service is designed to keep your vehicle in pristine condition. 
             Perfect for regular upkeep and maintaining that showroom finish, this service covers both exterior 
             and interior detailing to ensure your car looks its best inside and out.
           </p>
