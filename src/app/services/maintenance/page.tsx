@@ -2,50 +2,55 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import ServicesBackground from "../../assets/ServicesBackground.png";
-import Footer from "../../components/Footer";
+import audia6image1 from "../../assets/servicesAssets/audia6/a61.png";
+import audia6image2 from "../../assets/servicesAssets/audia6/a62.png";
+import audia6image3 from "../../assets/servicesAssets/audia6/a63.png";
+import audia6image4 from "../../assets/servicesAssets/audia6/a64.png";
+import audia6image5 from "../../assets/servicesAssets/audia6/interiora6.png";
 
 export default function MaintenancePage() {
   const [mainImage, setMainImage] = useState(0);
-  const images = Array(6).fill(ServicesBackground);
+  const images = [audia6image1, audia6image2, audia6image3, audia6image4, audia6image5];
 
   return (
-    <>
-      <main className="pt-16 bg-black min-h-screen">
-        {/* Image Gallery Section */}
-        <section className="container mx-auto px-4 py-12">
-          <div className="space-y-4">
-            {/* Main Image */}
-            <div className="relative aspect-video w-full rounded-lg overflow-hidden">
-              <Image
-                src={images[mainImage]}
-                alt="Maintenance Service Main Image"
-                fill
-                className="object-cover"
-              />
-            </div>
-
-            {/* Thumbnail Grid */}
-            <div className="grid grid-cols-5 gap-4">
-              {images.slice(0, 5).map((image, index) => (
-                <div
-                  key={index}
-                  onClick={() => setMainImage(index)}
-                  className={`relative aspect-video rounded-lg overflow-hidden cursor-pointer
-                    ${mainImage === index ? 'ring-2 ring-blue-500' : ''}
-                    hover:opacity-80 transition-opacity shadow-lg`}
-                >
-                  <Image
-                    src={image}
-                    alt={`Maintenance Service Image ${index + 1}`}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-              ))}
-            </div>
+    <main className="pt-32 bg-black min-h-screen">
+      {/* Image Gallery Section */}
+      <section className="container mx-auto px-4 py-12">
+        <div className="space-y-4">
+          <div className="relative w-full rounded-lg overflow-hidden max-w-5xl mx-auto" style={{ height: '400px' }}>
+            <Image
+              src={images[mainImage]}
+              alt="Maintenance Service Main Image"
+              fill
+              quality={100}
+              priority
+              sizes="(max-width: 1024px) 100vw, 1024px"
+              className="object-contain"
+            />
           </div>
-        </section>
+
+          <div className="grid grid-cols-5 gap-4 max-w-5xl mx-auto">
+            {images.map((image, index) => (
+              <div
+                key={index}
+                onClick={() => setMainImage(index)}
+                className={`relative aspect-video rounded-lg overflow-hidden cursor-pointer
+                  ${mainImage === index ? 'ring-2 ring-blue-500' : ''}
+                  hover:opacity-80 transition-opacity shadow-lg`}
+              >
+                <Image
+                  src={image}
+                  alt={`Maintenance Service Image ${index + 1}`}
+                  fill
+                  quality={75}
+                  sizes="(max-width: 768px) 20vw, 200px"
+                  className="object-cover"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
         {/* Title Section */}
         <section className="container mx-auto px-4 py-12 border-b-2 border-[#85A5F5]">
@@ -119,6 +124,5 @@ export default function MaintenancePage() {
           </div>
         </section>
       </main>
-    </>
   );
 }

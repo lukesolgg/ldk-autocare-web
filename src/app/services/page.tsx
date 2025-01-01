@@ -1,10 +1,17 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import ServicesBackground from "../assets/ServicesBackground.png";
-import Announcement from "../components/Announcement";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+
+import maintenanceMain from "../assets/servicesAssets/audia6/a61.png";
+import maintenanceBg from "../assets/servicesAssets/audia6/a62.png";
+import valetMain from "../assets/servicesAssets/celica/celica5.png";
+import valetBg from "../assets/servicesAssets/celica/celica2.png";
+import sealMain from "../assets/servicesAssets/mx5/mx51.png";
+import sealBg from "../assets/servicesAssets/mx5/mx52.png";
+import ceramicMain from "../assets/servicesAssets/golf/golf3.webp";
+import ceramicBg from "../assets/servicesAssets/golf/golf5.webp";
+import protectionMain from "../assets/servicesAssets/i20/i20image1.png";
+import protectionBg from "../assets/servicesAssets/i20/i20snowfoam1.png";
 
 export default function ServicesPage() {
     const services = [
@@ -19,7 +26,9 @@ export default function ServicesPage() {
             "Window cleaning inside and out",
             "Interior vacuum and dust removal"
           ],
-          price: "40"
+          price: "40",
+          mainImage: maintenanceMain,
+          backgroundImage: maintenanceBg
         },
         {
           title: "FULL VALET",
@@ -32,7 +41,9 @@ export default function ServicesPage() {
             "Paint correction",
             "Engine bay cleaning"
           ],
-          price: "70"
+          price: "70",
+          mainImage: valetMain,
+          backgroundImage: valetBg
         },
         {
           title: "CLAY AND SEAL",
@@ -45,7 +56,9 @@ export default function ServicesPage() {
             "Swirl mark removal",
             "Paint enhancement"
           ],
-          price: "120"
+          price: "120",
+          mainImage: sealMain,
+          backgroundImage: sealBg
         },
         {
           title: "CERAMIC COATING",
@@ -58,7 +71,9 @@ export default function ServicesPage() {
             "Curing process",
             "Final inspection"
           ],
-          price: "400"
+          price: "400",
+          mainImage: ceramicMain,
+          backgroundImage: ceramicBg
         },
         {
           title: "NEW CAR PROTECTION",
@@ -69,9 +84,12 @@ export default function ServicesPage() {
             "Ceramic coating",
             "Interior protection",
             "Wheel protection",
-            "Documentation"
+            "Documentation",
+            
           ],
-          price: "POA"
+          price: "POA",
+          mainImage: protectionMain,
+          backgroundImage: protectionBg
         }
       ];
   return (
@@ -85,7 +103,7 @@ export default function ServicesPage() {
           >
             {/* Background Image */}
             <Image
-              src={ServicesBackground}
+              src={service.backgroundImage}
               alt="Background"
               fill
               className="object-cover"
@@ -98,7 +116,7 @@ export default function ServicesPage() {
               {/* Image Side */}
               <div className="w-full md:w-1/2 relative h-[300px] md:h-[600px] rounded-lg overflow-hidden">
                 <Image
-                  src={ServicesBackground}
+                  src={service.mainImage}
                   alt={service.title}
                   fill
                   className="object-cover"
@@ -125,13 +143,13 @@ export default function ServicesPage() {
                   Prices from £{service.price}
                 </p>
                 <Link href={`/services/${service.slug}`}>
-    <button className="w-full md:w-auto px-8 py-3 
-      bg-[linear-gradient(90deg,#85A5F5,#1877F2,#4AF9F9)]
-      rounded-lg text-white font-bold
-      hover:scale-105 transition-all duration-300">
-      Learn More
-    </button>
-  </Link>
+                    <button className="w-full md:w-auto px-8 py-3 
+                     bg-[linear-gradient(90deg,#85A5F5,#1877F2,#4AF9F9)]
+                     rounded-lg text-white font-bold
+                     hover:scale-105 transition-all duration-300">
+                    Learn More
+                    </button>
+                </Link>
               </div>
             </div>
           </section>

@@ -2,7 +2,11 @@ import React from 'react';
 import Link from "next/link";
 import Image from "next/image";
 import ServicesBackground from "../assets/ServicesBackground.png";
-import HeroBackground from "../assets/HeroBackground.png";
+import maintenanceMain from "../assets/servicesAssets/audia6/a61.png";
+import valetMain from "../assets/servicesAssets/celica/celica5.png";
+import clayMain from "../assets/servicesAssets/mx5/mx51.png";
+import ceramicMain from "../assets/servicesAssets/golf/golf3.webp";
+import protectionMain from "../assets/servicesAssets/i20/i20image1.png";
 
 function Services() {
     const packages = [
@@ -10,31 +14,36 @@ function Services() {
           name: "Maintenance Detail",
           time: "2-3 Hours",
           price: "40",
-          slug: "maintenance"
+          slug: "maintenance",
+          image: maintenanceMain
         },
         {
           name: "Full Valet",
           time: "4-6 Hours",
           price: "70",
-          slug: "full-valet"
+          slug: "full-valet",
+          image: valetMain
         },
         {
           name: "Clay & Seal",
           time: "5-7 Hours",
           price: "120",
-          slug: "clay-seal"
+          slug: "clay-seal",
+          image: clayMain
         },
         {
           name: "Ceramic Coating",
           time: "1-2 Days",
           price: "400",
-          slug: "ceramic-coating"
+          slug: "ceramic-coating",
+          image: ceramicMain
         },
         {
           name: "New Car Protection",
           time: "1-2 Days",
           price: "POA",
-          slug: "new-car-protection"
+          slug: "new-car-protection",
+          image: protectionMain
         }
       ];
 
@@ -75,7 +84,7 @@ function Services() {
                 >
                   <div className="relative h-[50%] w-full">
                     <Image
-                      src={HeroBackground}
+                      src={pkg.image}
                       alt={pkg.name}
                       fill
                       className="object-cover"

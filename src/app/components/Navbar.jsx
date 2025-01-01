@@ -58,13 +58,10 @@ const Navbar = () => {
             {/* Desktop Book Now Button */}
 <div className="hidden md:block my-auto">
   <Link href="/book">
-    <button className="relative px-6 py-2.5
-      bg-[linear-gradient(90deg,#85A5F5,#1877F2,#4AF9F9)]
-      hover:scale-110 transition-all duration-300 
-      text-white text-sm md:text-base font-medium
-      border-2 border-transparent
-      hover:border-blue-300
-      text-center">
+    <button className="px-8 py-3 
+                bg-[linear-gradient(90deg,#85A5F5,#1877F2,#4AF9F9)]
+                rounded-lg text-white font-bold
+                hover:scale-105 transition-all duration-300">
       Book Now
     </button>
   </Link>

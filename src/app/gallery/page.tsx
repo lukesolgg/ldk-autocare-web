@@ -6,6 +6,27 @@ import Announcement from "../components/Announcement";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
+// i20 Images
+import i20image1 from "../assets/servicesAssets/i20/i20image1.png";
+import i20image2 from "../assets/servicesAssets/i20/i20image2.png";
+import i20image3 from "../assets/servicesAssets/i20/i20image3.png";
+import i20image4 from "../assets/servicesAssets/i20/i20image4.png";
+import i20snowfoam from "../assets/servicesAssets/i20/i20snowfoam1.png";
+
+// Golf Images
+import golf1 from "../assets/servicesAssets/golf/golf1.webp";
+import golf2 from "../assets/servicesAssets/golf/golf2.webp";
+import golf3 from "../assets/servicesAssets/golf/golf3.webp";
+import golf4 from "../assets/servicesAssets/golf/golf4.webp";
+import golf5 from "../assets/servicesAssets/golf/golf5.webp";
+
+// MX5 Images
+import mx51 from "../assets/servicesAssets/mx5/mx51.png";
+import mx52 from "../assets/servicesAssets/mx5/mx52.png";
+import mx53 from "../assets/servicesAssets/mx5/mx53.png";
+import mx54 from "../assets/servicesAssets/mx5/mx54.png";
+import mx55 from "../assets/servicesAssets/mx5/mx54.png";
+
 export default function GalleryPage() {
   const projects = [
     {
@@ -19,12 +40,12 @@ export default function GalleryPage() {
         "Interior Deep Clean",
         "Wheel & Tire Detail"
       ],
-      images: Array(6).fill(ServicesBackground)
+      images: [i20image1, i20image2, i20image3, i20image4, i20snowfoam]
     },
     {
-      title: "BMW M4 2023",
+      title: "2013 Volkswagen Golf 1.6 TDI BlueMotion",
       service: "Ceramic Coating",
-      description: "Protection and perfection combined. This M4 received our premium ceramic coating package for long-lasting results.",
+      description: "Protection and perfection combined. This Golf received our premium ceramic coating package for long-lasting results.",
       workCompleted: [
         "Paint Correction",
         "Ceramic Coating Application",
@@ -32,10 +53,10 @@ export default function GalleryPage() {
         "Glass Treatment",
         "Wheel Coating"
       ],
-      images: Array(6).fill(ServicesBackground)
+      images: [golf1, golf2, golf3, golf4, golf5]
     },
     {
-      title: "Mercedes C63 AMG 2021",
+      title: "1991 Mazda MX-5",
       service: "Full Paint Correction",
       description: "Restoring this performance vehicle to better than showroom condition with our comprehensive paint correction service.",
       workCompleted: [
@@ -45,7 +66,7 @@ export default function GalleryPage() {
         "Surface Protection",
         "Interior Detailing"
       ],
-      images: Array(6).fill(ServicesBackground)
+      images: [mx51, mx52, mx53, mx54, mx55]
     }
   ];
 
