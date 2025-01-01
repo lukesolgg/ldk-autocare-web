@@ -139,7 +139,7 @@ export default function BookingPage() {
                       defaultValue="dropoff"
                     >
                       <option value="dropoff">Drop Off</option>
-                      <option value="mobile">Mobile Service</option>
+                      <option value="mobile">Mobile Service - We Require Access to Water & Electricity</option>
                     </select>
                   </div>
                 </div>

@@ -14,7 +14,7 @@ function Footer() {
             <ul className="space-y-2">
               <li><Link href="/book" className="hover:text-blue-500 transition duration-300 text-sm md:text-base">How to Book</Link></li>
               <li><Link href="/services" className="hover:text-blue-500 transition duration-300 text-sm md:text-base">Services</Link></li>
-              <li><Link href="/reviews" className="hover:text-blue-500 transition duration-300 text-sm md:text-base">Reviews</Link></li>
+              <li><Link href="/" className="hover:text-blue-500 transition duration-300 text-sm md:text-base">Reviews</Link></li>
             </ul>
           </div>
 
@@ -32,8 +32,7 @@ function Footer() {
           <div className="mb-6 md:mb-0">
             <h3 className="text-blue-500 font-bold mb-2 md:mb-4 text-lg md:text-xl">Resources</h3>
             <ul className="space-y-2">
-              <li><Link href="/faq" className="hover:text-blue-500 transition duration-300 text-sm md:text-base">FAQ</Link></li>
-              <li><Link href="/blog" className="hover:text-blue-500 transition duration-300 text-sm md:text-base">Blog</Link></li>
+              <li><Link href="/faq" className="hover:text-blue-500 transition duration-300 text-sm md:text-base">FAQs</Link></li>
               <li><Link href="/resources" className="hover:text-blue-500 transition duration-300 text-sm md:text-base">Useful Resources</Link></li>
             </ul>
           </div>
