@@ -56,7 +56,7 @@ function Hero() {
   </Link>
   <Link href="/contact">
     <button className="relative w-[150px] md:w-[200px] px-6 py-3 md:px-8 md:py-4 
-      bg-transparent 
+      bg-transparent
       hover:scale-110 transition-all duration-300 
       text-white text-sm md:text-base font-medium
       border-2

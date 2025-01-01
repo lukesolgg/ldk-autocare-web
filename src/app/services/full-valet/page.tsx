@@ -2,23 +2,30 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import ServicesBackground from "../../assets/ServicesBackground.png";
+import celica1 from "../../assets/servicesAssets/celica/celica1.png";
+import celica2 from "../../assets/servicesAssets/celica/celica2.png";
+import celica3 from "../../assets/servicesAssets/celica/celica3.png";
+import celica4 from "../../assets/servicesAssets/celica/celica4.png";
+import celica5 from "../../assets/servicesAssets/celica/celica5.png";
 
 export default function FullValetPage() {
   const [mainImage, setMainImage] = useState(0);
-  const images = Array(6).fill(ServicesBackground);
+  const images = [celica1, celica2, celica3, celica4, celica5];
 
   return (
     <main className="pt-32 bg-black min-h-screen">
       {/* Image Gallery Section */}
       <section className="container mx-auto px-4 py-12">
         <div className="space-y-4">
-          <div className="relative aspect-video w-full rounded-lg overflow-hidden">
+          <div className="relative w-full rounded-lg overflow-hidden max-w-5xl mx-auto" style={{ height: '400px' }}>
             <Image
               src={images[mainImage]}
               alt="Full Valet Service Main Image"
               fill
-              className="object-cover"
+              quality={100}
+              priority
+              sizes="(max-width: 1024px) 100vw, 1024px"
+              className="object-contain"
             />
           </div>
 

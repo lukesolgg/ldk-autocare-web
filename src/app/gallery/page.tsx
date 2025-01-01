@@ -151,7 +151,7 @@ export default function GalleryPage() {
     <>
       <Announcement />
       <Navbar />
-      <main className="pt-16">
+      <main className="">
         {projects.map((project, index) => (
           <ProjectSection key={index} project={project} index={index} />
         ))}

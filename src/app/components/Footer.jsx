@@ -1,51 +1,13 @@
 import React from 'react';
 import Link from 'next/link';
-import { FaWhatsapp, FaInstagram, FaTiktok, FaYoutube } from 'react-icons/fa';
+import { FaWhatsapp, FaInstagram, FaFacebook, FaTiktok } from 'react-icons/fa';
 
 function Footer() {
   return (
-    <footer className="bg-black text-white border-t-[3px] border-[#85A5F5] min-h-[50vh] flex flex-col justify-between py-6 md:py-8">
-      {/* Get in Touch Section */}
-      <div className="container mx-auto px-4 py-4 md:py-8 text-center">
-        <h2 className="text-xl md:text-2xl font-bold mb-3 md:mb-4">Get in Touch</h2>
-        <Link 
-          href="https://wa.me/your-number-here" 
-          target="_blank"
-          className="inline-flex items-center gap-2 text-white hover:text-blue-500 transition duration-300 text-sm md:text-base"
-        >
-          <FaWhatsapp className="text-xl md:text-2xl" />
-          <span>Send us a message on WhatsApp</span>
-        </Link>
-
-        {/* Social Media Icons */}
-        <div className="flex justify-center gap-4 md:gap-6 mt-3 md:mt-4">
-          <Link 
-            href="https://instagram.com/your-handle" 
-            target="_blank"
-            className="text-white hover:text-blue-500 transition duration-300"
-          >
-            <FaInstagram className="text-xl md:text-2xl" />
-          </Link>
-          <Link 
-            href="https://tiktok.com/@your-handle" 
-            target="_blank"
-            className="text-white hover:text-blue-500 transition duration-300"
-          >
-            <FaTiktok className="text-xl md:text-2xl" />
-          </Link>
-          <Link 
-            href="https://youtube.com/your-channel" 
-            target="_blank"
-            className="text-white hover:text-blue-500 transition duration-300"
-          >
-            <FaYoutube className="text-xl md:text-2xl" />
-          </Link>
-        </div>
-      </div>
-
+    <footer className="bg-black text-white/80 border-t-[3px] border-[#85A5F5]">
       {/* Main Footer Content */}
       <div className="container mx-auto px-4 py-4 md:py-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 text-center md:text-left">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-8 text-center md:text-left">
           {/* Company Column */}
           <div className="mb-6 md:mb-0">
             <h3 className="text-blue-500 font-bold mb-2 md:mb-4 text-lg md:text-xl">Company</h3>
@@ -67,13 +29,47 @@ function Footer() {
           </div>
 
           {/* Other Column */}
-          <div>
-            <h3 className="text-blue-500 font-bold mb-2 md:mb-4 text-lg md:text-xl">Other</h3>
+          <div className="mb-6 md:mb-0">
+            <h3 className="text-blue-500 font-bold mb-2 md:mb-4 text-lg md:text-xl">Resources</h3>
             <ul className="space-y-2">
-              <li><Link href="/contact" className="hover:text-blue-500 transition duration-300 text-sm md:text-base">Contact Us</Link></li>
-              <li><Link href="/guide" className="hover:text-blue-500 transition duration-300 text-sm md:text-base">Maintenance Guide</Link></li>
+              <li><Link href="/faq" className="hover:text-blue-500 transition duration-300 text-sm md:text-base">FAQ</Link></li>
+              <li><Link href="/blog" className="hover:text-blue-500 transition duration-300 text-sm md:text-base">Blog</Link></li>
               <li><Link href="/resources" className="hover:text-blue-500 transition duration-300 text-sm md:text-base">Useful Resources</Link></li>
             </ul>
+          </div>
+
+          {/* Social & Contact Column */}
+          <div className="mb-6 md:mb-0">
+            <h3 className="text-blue-500 font-bold mb-2 md:mb-4 text-lg md:text-xl">Follow Us</h3>
+            <div className="flex justify-center md:justify-start space-x-4 mb-4">
+              <a href="https://wa.me/447752038819" target="_blank" rel="noopener noreferrer" 
+                className="text-2xl hover:text-green-500 transition duration-300">
+                <FaWhatsapp />
+              </a>
+              <a href="https://instagram.com/ldkautocare" target="_blank" rel="noopener noreferrer" 
+                className="text-2xl hover:text-pink-500 transition duration-300">
+                <FaInstagram />
+              </a>
+              <a href="https://facebook.com/ldkautocare" target="_blank" rel="noopener noreferrer" 
+                className="text-2xl hover:text-blue-500 transition duration-300">
+                <FaFacebook />
+              </a>
+              <a href="https://tiktok.com/@ldkautocare" target="_blank" rel="noopener noreferrer" 
+                className="text-2xl hover:text-gray-500 transition duration-300">
+                <FaTiktok />
+              </a>
+            </div>
+            <div className="space-y-2 text-sm md:text-base">
+              <p>
+                <span className="text-blue-500">Email:</span> enquiries@ldkautocare.com
+              </p>
+              <p>
+                <span className="text-blue-500">Location:</span> Belfast, Northern Ireland
+              </p>
+              <p>
+                <span className="text-blue-500">Hours:</span> Mon - Sat: 8am - 8pm
+              </p>
+            </div>
           </div>
         </div>
       </div>

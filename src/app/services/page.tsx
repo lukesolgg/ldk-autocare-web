@@ -95,7 +95,7 @@ export default function ServicesPage() {
   return (
     <>
       
-      <main className="pt-16">
+      <main className="">
         {services.map((service, index) => (
           <section 
             key={index}
