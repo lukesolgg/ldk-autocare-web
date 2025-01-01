@@ -37,7 +37,7 @@ function BookNow() {
         <h2 className="text-2xl md:text-5xl font-bold text-white text-center mb-2 md:mb-4">
           Our Booking Process
         </h2>
-        <p className="text-base md:text-xl text-white/80 text-center mb-6 md:mb-12">
+        <p className="text-base md:text-xl text-white/80 text-center mb-6 md:mb-24">
           Simple steps to get your car looking its best
         </p>
   

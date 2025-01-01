@@ -80,7 +80,7 @@ function Reviews() {
         <h2 className="text-3xl md:text-5xl font-bold text-white text-center mb-4">
           Reviews
         </h2>
-        <p className="text-base md:text-xl text-white text-center mb-8 md:mb-12 px-4">
+        <p className="text-base md:text-xl text-white text-center mb-8 md:mb-24 px-4">
           Don't just take our word for it, See what our clients have to say:
         </p>
 

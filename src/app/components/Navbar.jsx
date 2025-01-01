@@ -37,10 +37,6 @@ const Navbar = () => {
             />
           </Link>
         </div>
-        <div className="hidden md:flex items-center space-x-1 text-2xl font-bold">
-          <span className="text-blue-500">LDK</span>
-          <span className="text-white">Autocare</span>
-        </div>
       </div>
 
       {/* Desktop Navigation */}
