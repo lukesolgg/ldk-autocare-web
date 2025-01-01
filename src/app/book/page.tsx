@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { FaWhatsapp } from "react-icons/fa";
 import ServicesBackground from "../assets/ServicesBackground.png";
@@ -7,9 +7,12 @@ import Announcement from "../components/Announcement";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import LDKLogo from "../assets/logotransparent.png";
+import emailjs from '@emailjs/browser';
 
 export default function BookingPage() {
-  const [formData, setFormData] = useState({
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [isSubmitted, setIsSubmitted] = useState(false);
+    const [formData, setFormData] = useState({
     name: "",
     email: "",
     mobile: "",
@@ -22,16 +25,47 @@ export default function BookingPage() {
     condition: "",
     fabricType: ""
   });
-  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  useEffect(() => {
+    emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!);
+  }, []);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitted(true);
-    // Handle form submission
+    setIsSubmitting(true);
+    
+    try {
+        await emailjs.send(
+          process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+          process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+          {
+            to_email: 'lukeknightofficial@gmail.com',
+            from_name: formData.name,
+            from_email: formData.email,
+            mobile: formData.mobile,
+            service_type: formData.serviceType,
+            address: formData.serviceType === 'mobile' ? formData.address : 'N/A',
+            vehicle_make: formData.vehicleMake,
+            vehicle_model: formData.vehicleModel,
+            vehicle_year: formData.vehicleYear,
+            package: formData.package,
+            condition: formData.condition,
+            fabric_type: formData.fabricType
+          },
+          process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+        );
+
+        setIsSubmitted(true);
+    } catch (error) {
+      console.error('Failed to send email:', error);
+      alert('Failed to send booking. Please try again or contact us directly.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const ThankYouMessage = () => (
@@ -250,14 +284,16 @@ export default function BookingPage() {
                 </div>
   
                 <button
-                  type="submit"
-                  className="w-full md:w-auto px-8 py-3 
-                    bg-[linear-gradient(90deg,#85A5F5,#1877F2,#4AF9F9)]
-                    rounded-lg text-white font-bold
-                    hover:scale-105 transition-all duration-300"
-                >
-                  Submit Booking
-                </button>
+    type="submit"
+    disabled={isSubmitting}
+    className="w-full md:w-auto px-8 py-3 
+      bg-[linear-gradient(90deg,#85A5F5,#1877F2,#4AF9F9)]
+      rounded-lg text-white font-bold
+      hover:scale-105 transition-all duration-300
+      disabled:opacity-50 disabled:cursor-not-allowed"
+  >
+    {isSubmitting ? 'Submitting...' : 'Submit Booking'}
+  </button>
               </form>
             </div>
           ) : (
