@@ -114,7 +114,7 @@ const Navbar = () => {
             
             {/* Mobile Book Now Button */}
             <Link href="/book">
-              <button className="bg-blue-500 text-white px-8 py-3 rounded-md hover:bg-blue-600 transition duration-300 text-xl">
+              <button className="bg-blue-500 text-white px-8 py-3 my-8 rounded-md hover:bg-blue-600 transition duration-300 text-xl">
                 Book Now
               </button>
             </Link>
