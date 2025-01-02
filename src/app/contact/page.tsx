@@ -8,7 +8,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import emailjs from '@emailjs/browser';
 import toast from 'react-hot-toast';
-import Logo from "../assets/Logo.png";
+import logotransparent from "../assets/logotransparent.png";
 import Link from "next/link";
 
 export default function ContactPage() {
@@ -69,7 +69,7 @@ export default function ContactPage() {
           <div className="container mx-auto px-4 py-16 flex flex-col items-center justify-center min-h-[60vh]">
             <div className="text-center space-y-8">
               <Image
-                src={Logo}
+                src={logotransparent}
                 alt="LDK Autocare Logo"
                 width={200}
                 height={200}
